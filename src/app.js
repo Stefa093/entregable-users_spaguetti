@@ -25,12 +25,12 @@ db.sync()
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   res.status(200).json({ message: "Ok!" });
 });
 
 app.use("/api/v1", userRouter);
 
-app.listen(() => {
+app.listen(port, () => {
   console.log(`Server started at port ${port}`);
 });
